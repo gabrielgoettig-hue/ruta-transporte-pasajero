@@ -333,7 +333,7 @@ class _ConductorPageState extends State<ConductorPage> {
 class AdministradorPage extends StatelessWidget {
   final double tarifaMinima;
   final double precioKilometro;
-  final VoidCallback onModificar;
+  final Future<void> Function() onModificar;
 
   const AdministradorPage({
     super.key,
@@ -377,7 +377,9 @@ class AdministradorPage extends StatelessWidget {
             ),
             const SizedBox(height: 25),
             ElevatedButton.icon(
-              onPressed: onModificar,
+              onPressed: () async {
+  await onModificar();
+},
               icon: const Icon(Icons.edit),
               label: const Text('Modificar tarifas'),
             ),
