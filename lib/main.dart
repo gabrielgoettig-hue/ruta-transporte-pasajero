@@ -25,6 +25,7 @@ class _RutaTransporteAppState extends State<RutaTransporteApp> {
   }
 
   Future<void> modificarTarifas() async {
+    debugPrint('SE EJECUTO MODIFICAR TARIFAS');
     final minimaController = TextEditingController(
       text: tarifaMinima.toStringAsFixed(0),
     );
